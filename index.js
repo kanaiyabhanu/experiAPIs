@@ -1,9 +1,22 @@
 let express = require("express");
 let app = express();
+let morgan = require("morgan");
+let config = require("config");
 let Joi = require("@hapi/joi");
+let user = require('./middleware/user');
 app.use(express.json());
+app.use(express.static("public"));
+app.use(express.urlencoded({ static: true }));
+app.use(user);
+app.use(morgan("tiny"));
 // console.log(process);
 let port = process.env.PORT || 4500;
+
+console.log(`NODE_ENV MODE: ${process.env.NODE_ENV}`);
+console.log(`app :${app.get("env")}`);
+console.log(`name : ${config.get("name")}`);
+console.log(`mode : ${config.get("mode")}`);
+// console.log(`password : ${config.get("password")}`);
 // console.log(express);
 // console.log(app);
 
