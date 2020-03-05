@@ -1,0 +1,15 @@
+{
+  "name": "jptaasfpgadaexpress",
+  "version": "1.0.0",
+  "description": "creating expressjs API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vipul",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/joi": "^17.1.0",
+    "express": "^4.17.1"
+  }
+}
